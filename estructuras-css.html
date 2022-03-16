@@ -4,7 +4,7 @@
 <head>
 	<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
-	<title>Estructura con float</title>
+	<title>Estructura con inline block</title>
 </head>
 <style>
 	/* Aquí va el código CSS */
@@ -32,13 +32,6 @@
     section{
         margin-bottom: 16px;
     }
-    .clearfix:after { 
-        content: " "; 
-        visibility: hidden; 
-        display: block; 
-        height: 0; 
-        clear: both;
-    }
 
     footer{
         height: 100px;
@@ -52,22 +45,24 @@
             height: 200px;
         }
         nav{
-            float:left;
+            display:inline-block;
             width: 20%;
             height: 600px;
+            vertical-align: top;
         }
         .column{
-            width: 78%;
-            float: left;
+            width: 77%;
+            display:inline-block;
             margin-left: 2%;
             height: auto;
+            vertical-align: top;
         }
         header{
-            float: left;
+            display:inline-block;
             width: 100%;
         }
         section{
-            float: left;
+            display:inline-block;
             width: 100%;
         }
         .column section{
@@ -97,7 +92,7 @@
 </style>
 
 <body>
-    <div class="container clearfix">
+    <div class="container">
         <nav>
             <h1>Nav</h1>
         </nav>
