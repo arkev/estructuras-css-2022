@@ -3,6 +3,7 @@
 
 <head>
 	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
 	<title>Estructura con float</title>
 </head>
 <style>
@@ -10,37 +11,93 @@
     body{
         background-color: blue;
     }
-    header,section,footer{
-        height: 200px;
-    }
+    
     nav{
-        position:absolute;
         background-color:aqua;
-        width: 20%;
-        height: 600px;
+        height: 100px;
+        margin-bottom: 16px;
     }
     .column{
-        width: 78%;
-        margin-left: 22%;
+        margin-bottom: 16px;
+    }
+    .column section{
+        background-color:brown;
+        height: 100px;
     }
     header{
         background-color:blueviolet;
+        height: 100px;
+        margin-bottom: 16px;
     }
     section{
-        background-color:brown;
+        margin-bottom: 16px;
     }
+    .clearfix:after { 
+        content: " "; 
+        visibility: hidden; 
+        display: block; 
+        height: 0; 
+        clear: both;
+    }
+
     footer{
-        width: 100%;
-        position:fixed;
+        height: 100px;
         background-color:darkgreen;
-        bottom: 0;
-        left: 0;
+    }
+
+    /* Versión Tablet */
+    @media (min-width: 720px) {
+        /* aquí inician las reglas para tablet */ 
+        header,section,footer{
+            height: 200px;
+        }
+        nav{
+            float:left;
+            width: 20%;
+            height: 600px;
+        }
+        .column{
+            width: 78%;
+            float: left;
+            margin-left: 2%;
+            height: auto;
+        }
+        header{
+            float: left;
+            width: 100%;
+        }
+        section{
+            float: left;
+            width: 100%;
+        }
+        .column section{
+            height: 200px;
+        }
+         /* aquí terminan las reglas para tablet */ 
+    }
+
+    /* Versión laptop */
+    @media (min-width: 1024px) {
+        /* aquí inician las reglas para laptop */ 
+        header{
+            background-color: burlywood;
+        }
+         /* aquí terminan las reglas para laptop */ 
+    }
+
+    /* Versión Desktop */
+    @media (min-width: 1400px) {
+        /* aquí inician las reglas para Desktop */ 
+        header{
+            background-color: rgb(234, 5, 255);
+        }
+         /* aquí terminan las reglas para Desktop */ 
     }
     
 </style>
 
 <body>
-    <div class="container">
+    <div class="container clearfix">
         <nav>
             <h1>Nav</h1>
         </nav>
