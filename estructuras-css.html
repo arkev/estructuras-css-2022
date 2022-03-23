@@ -41,18 +41,19 @@
     /* Versión Tablet */
     @media (min-width: 720px) {
         /* aquí inician las reglas para tablet */ 
+        .container{
+            display: flex;
+        }
         header,section,footer{
             height: 200px;
         }
         nav{
-            display:inline-block;
             width: 20%;
             height: 600px;
             vertical-align: top;
         }
         .column{
             width: 77%;
-            display:inline-block;
             margin-left: 2%;
             height: auto;
             vertical-align: top;
@@ -77,6 +78,17 @@
         header{
             background-color: burlywood;
         }
+        .container{
+            flex-direction:row-reverse;
+        }
+        .column {
+            margin-left:0%;
+        }
+        nav {
+            margin-left:2%;
+        }
+
+
          /* aquí terminan las reglas para laptop */ 
     }
 
