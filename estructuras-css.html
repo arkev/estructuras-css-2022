@@ -43,28 +43,34 @@
         /* aquí inician las reglas para tablet */ 
         .container{
             display: flex;
+            flex-flow: row wrap;
+            flex: 1 100%;
+            gap: 20px;
+            align-items:flex-start;
         }
         header,section,footer{
             height: 200px;
         }
+        section{
+            margin-bottom: 0;
+        }
         nav{
-            width: 20%;
             height: 600px;
             vertical-align: top;
+            margin-bottom: 0;
+            flex: 1 0 0;
+        }
+        header, section{
+            flex: 1 100%;
+            margin-bottom: 0;
         }
         .column{
-            width: 77%;
-            margin-left: 2%;
             height: auto;
             vertical-align: top;
-        }
-        header{
-            display:inline-block;
-            width: 100%;
-        }
-        section{
-            display:inline-block;
-            width: 100%;
+            flex: 2 0px;
+            display: flex;
+            flex-flow: row wrap;
+            gap: 20px;
         }
         .column section{
             height: 200px;
@@ -81,14 +87,9 @@
         .container{
             flex-direction:row-reverse;
         }
-        .column {
-            margin-left:0%;
+        .column section {
+            flex-basis: 48%;
         }
-        nav {
-            margin-left:2%;
-        }
-
-
          /* aquí terminan las reglas para laptop */ 
     }
 
