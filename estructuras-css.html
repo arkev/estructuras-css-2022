@@ -4,7 +4,8 @@
 <head>
 	<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
-	<title>Estructura con inline block</title>
+	<title>Estructura con Flexbox Grid</title>
+    <link rel="stylesheet" href="flexboxgrid.css">
 </head>
 <style>
 	/* Aquí va el código CSS */
@@ -17,9 +18,7 @@
         height: 100px;
         margin-bottom: 16px;
     }
-    .column{
-        margin-bottom: 16px;
-    }
+
     .column section{
         background-color:brown;
         height: 100px;
@@ -29,9 +28,12 @@
         height: 100px;
         margin-bottom: 16px;
     }
-    section{
+
+    .column section, .column header{
+        padding: 20px;
         margin-bottom: 16px;
     }
+
 
     footer{
         height: 100px;
@@ -39,40 +41,19 @@
     }
 
     /* Versión Tablet */
-    @media (min-width: 720px) {
+    @media (min-width: 768px) {
         /* aquí inician las reglas para tablet */ 
-        .container{
-            display: flex;
-            flex-flow: row wrap;
-            flex: 1 100%;
-            gap: 20px;
-            align-items:flex-start;
-        }
-        header,section,footer{
-            height: 200px;
-        }
-        section{
-            margin-bottom: 0;
-        }
         nav{
             height: 600px;
             vertical-align: top;
-            margin-bottom: 0;
-            flex: 1 0 0;
         }
         header, section{
-            flex: 1 100%;
             margin-bottom: 0;
         }
-        .column{
-            height: auto;
-            vertical-align: top;
-            flex: 2 0px;
-            display: flex;
-            flex-flow: row wrap;
-            gap: 20px;
+        .column section, .column header{
+            height: 190px;
         }
-        .column section{
+        footer{
             height: 200px;
         }
          /* aquí terminan las reglas para tablet */ 
@@ -83,12 +64,6 @@
         /* aquí inician las reglas para laptop */ 
         header{
             background-color: burlywood;
-        }
-        .container{
-            flex-direction:row-reverse;
-        }
-        .column section {
-            flex-basis: 48%;
         }
          /* aquí terminan las reglas para laptop */ 
     }
@@ -106,26 +81,35 @@
 
 <body>
     <div class="container">
-        <nav>
-            <h1>Nav</h1>
-        </nav>
-        
-        <section class="column">
-            <header>
-                <h1>Header</h1>
-            </header>
-            <section>
-                <h1>Section 1</h1>
+        <div class="row">
+            <nav class="col-xs-12 col-sm-3 col-md-4">
+                <h1 class="box">Nav</h1>
+            </nav>
+            <section class="column col-xs-12 col-sm-9 col-md-8">
+                <div class="box">
+                    <div class="row">
+                        <header class="col-xs-12">
+                            <h1 class="box">Header</h1>
+                        </header>
+                        <section class="col-xs-12">
+                            <h1 class="box">Section 1</h1>
+                        </section>
+                        <section class="col-xs-12">
+                            <h1 class="box">Section 2</h1>
+                        </section>
+                    </div>
+                </div>
             </section>
-            <section>
-                <h1>Section 2</h1>
-            </section>
-        </section>
+            <footer class="col-xs-12">
+                <h1 class="box">footer</h1>
+            </footer>
+        </div>
+
+
         
     </div>
     
-    <footer>
-        <h1>footer</h1>
-    </footer>
+    
     
 </body>
+</html>
